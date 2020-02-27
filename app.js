@@ -4,13 +4,13 @@ const path = require("path");
 import express from "express";
 import http from "http";
 
-import expressConfig from "./config/express";
+import expressConfig from "./src/config/express";
 import routerConfig from "./routes";
-import config from "./config/environment";
+import config from "./src/config/environment";
 import passport from "passport";
-import seedDataBaseIfNeeded from "./config/seed";
-import { mongoDBConnection } from "./db/mongodb";
-import redisConnection from "./db/redis";
+import seedDataBaseIfNeeded from "./src/config/seed";
+import { mongoDBConnection } from "./src/db/mongodb";
+import redisConnection from "./src/db/redis";
 
 const app = express(),
 	DIST_DIR = __dirname,

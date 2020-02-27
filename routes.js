@@ -1,11 +1,11 @@
 "use strict";
 
-import user from "./api/router/user.route";
-import auth from "./auth";
-import authAPI from "./api/auth";
+import user from "./src/api/router/user.route";
+import auth from "./src/auth";
+import authAPI from "./src/api/auth";
 
 import { serve, setup } from "swagger-ui-express";
-import { swaggerUI } from "./config/swagger";
+import { swaggerUI } from "./src/config/swagger";
 
 export default function(app) {
 	app.use("/v1/auth/token", auth);
