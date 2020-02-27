@@ -1,13 +1,13 @@
 {
     "watch":[
         "app.js",
-        "api/**/*.js",
-        "auth/*.js",
-        "libs/*.js",
-        "utils/*.js",
+        "src/api/**/*.js",
+        "src/auth/*.js",
+        "src/libs/*.js",
+        "src/utils/*.js",
         "routes.js",
-        "config/**/*.js",
-        "config/*.js",
-        "db/**/*.js"
+        "src/config/**/*.js",
+        "src/config/*.js",
+        "src/db/**/*.js"
     ]
 }
