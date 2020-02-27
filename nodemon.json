@@ -1,0 +1,13 @@
+{
+    "watch":[
+        "app.js",
+        "api/**/*.js",
+        "auth/*.js",
+        "libs/*.js",
+        "utils/*.js",
+        "routes.js",
+        "config/**/*.js",
+        "config/*.js",
+        "db/**/*.js"
+    ]
+}
