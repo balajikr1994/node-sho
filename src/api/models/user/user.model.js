@@ -73,7 +73,6 @@ userSchema
 		}
 	})
 	.get(function() {
-		console.log("this", this);
 		return this._password;
 	});
 

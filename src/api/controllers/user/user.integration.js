@@ -1,7 +1,8 @@
 /* globals describe, expect, it, before, after, beforeEach, afterEach */
 
 //import User from '../../models/user/user.model';
-const User = require("../../models/user/user.model");
+
+import User from "../../models/user/user.model";
 const request = require("supertest");
 const express = require('express');
 
@@ -13,9 +14,10 @@ describe('User API:', function() {
 
     // Clear users before testing
     before(function() {
-        return User.remove().then(function() {
+        return User.deleteMany().then(function() {
             user = new User({
-                name: 'Fake User',
+                first_name: 'Fake User',
+                last_name: 'Last Name',
                 email: 'test@example.com',
                 password: 'password'
             });
@@ -26,7 +28,7 @@ describe('User API:', function() {
 
     // Clear users after testing
     after(function() {
-        return User.remove();
+        return User.deleteMany();
     });
 
     describe('GET /api/users/me', function() {
@@ -49,7 +51,7 @@ describe('User API:', function() {
 
         it('should respond with a user profile when authenticated', function(done) {
             request(app)
-                .get('/api/users/me')
+                .get('/api/me')
                 .set('authorization', `Bearer ${token}`)
                 .expect(200)
                 .expect('Content-Type', /json/)
@@ -61,7 +63,7 @@ describe('User API:', function() {
 
         it('should respond with a 401 when not authenticated', function(done) {
             request(app)
-                .get('/api/users/me')
+                .get('/api/me')
                 .expect(401)
                 .end(done);
         });

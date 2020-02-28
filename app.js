@@ -37,7 +37,7 @@ routerConfig(app);
 seedDataBaseIfNeeded();
 
 function startServer() {
-	server.listen(process.env.PORT, config.ip, () => {
+	app.gudShoServer = server.listen(process.env.PORT, config.ip, () => {
 		console.log("Express server listening on ", server.address().port);
 	});
 }

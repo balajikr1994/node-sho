@@ -2,11 +2,13 @@ const express = require('express');
 //import request from 'supertest';
 const app = express();
 import User from './user.model';
+
 var user;
 var genUser = function() {
     user = new User({
         provider: 'local',
-        name: 'Fake User',
+        first_name: 'Fake User',
+        last_name: 'Last Name',
         email: 'test@example.com',
         password: 'password'
     });
@@ -16,15 +18,14 @@ var genUser = function() {
 describe('User Model', function() {
     before(function() {
         // Clear users before testing
-        return User.remove();
+        return User.deleteMany();
     });
 
     beforeEach(function() {
         genUser();
     });
-
     afterEach(function() {
-        return User.remove();
+        return User.deleteOne();
     });
 
     it('should begin with no users', function() {
@@ -87,7 +88,7 @@ describe('User Model', function() {
             });
 
             it('should remain the same hash unless the password is updated', function() {
-                user.name = 'Test User';
+                user.first_name = 'Test User';
                 return user.save()
                     .then(function(u) {
                         return u.authenticate('password');
