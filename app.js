@@ -43,3 +43,5 @@ function startServer() {
 }
 
 setImmediate(startServer);
+
+export default app;

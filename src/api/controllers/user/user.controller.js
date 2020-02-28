@@ -7,8 +7,8 @@
 
 "use strict";
 
-const sendRsp = require("../../utils/response");
-const resourceModel = require("../../config/resource").resourceModel;
+const sendRsp = require("../../../utils/response");
+const resourceModel = require("../../../config/resource").resourceModel;
 
 const { validationResult } = require("express-validator");
 

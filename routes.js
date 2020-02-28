@@ -1,6 +1,6 @@
 "use strict";
 
-import user from "./src/api/router/user.route";
+import user from "./src/api/router/user/user.route";
 import auth from "./src/auth";
 import authAPI from "./src/api/auth";
 

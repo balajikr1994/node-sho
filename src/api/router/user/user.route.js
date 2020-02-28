@@ -2,9 +2,9 @@
 
 const express = require("express");
 const router = express.Router();
-const controller = require("../controllers/user.controller");
+const controller = require("../../controllers/user/user.controller");
 const { check } = require("express-validator");
-const auth = require("../../auth/auth.service");
+const auth = require("../../../auth/auth.service");
 
 router.get("/", controller.index);
 router.get("/me", auth.isAuthenticated(), controller.me);

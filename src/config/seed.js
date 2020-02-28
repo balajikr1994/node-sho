@@ -1,6 +1,6 @@
 "use strict";
 
-import userModel from "../api/models/user.model";
+import userModel from "../api/models/user/user.model";
 import config from "./environment";
 
 export default function seedDataBaseIfNeeded() {

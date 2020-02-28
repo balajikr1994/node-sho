@@ -1,6 +1,6 @@
 "use strict";
 
-import userModel from "../api/models/user.model";
+import userModel from "../api/models/user/user.model";
 
 //MODELS CONFIGURATION
 export const resourceModel = {
